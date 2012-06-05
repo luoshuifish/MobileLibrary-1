@@ -39,8 +39,7 @@
     <!-- 个人信息 -->
     <string name="mainpage_personal_information">个人信息</string>
     
-    <!-- 我的书架 -->
-    <string name="mainpage_my_shelf">我的书架</string>
+
     
     <!-- 已借书目 -->
     <string name="mainpage_borrowed_books">已借书目</string>
@@ -92,6 +91,19 @@
     
     
     <string name="person_class">班级:</string>
+    
+        <!-- my book shelf -->
+    <string name="mainpage_my_shelf">我的书架</string>
+    
+    <!-- my store books-->
+    <string name="my_storebook">我的收藏</string>
+     
+    <!-- my borrowed books-->
+   	<string name="my_borrowedbook">我的借书</string>
+   	
+   	
+   	<!-- no borrowed books hint-->
+   	<string name="no_borrowed_book_results">没有借的书籍</string>
     
     
     

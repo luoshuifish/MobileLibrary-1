@@ -1,9 +1,5 @@
 package com.mobilelibrary.adapter;
 
-import com.mobilelibrary.R;
-import com.mobilelibrary.common.ImageManager;
-import com.mobilelibrary.entity.BookRecommendEntity;
-
 import android.app.Activity;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -14,13 +10,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/*
- * 新书推荐显示的适配器
- */
+import com.mobilelibrary.R;
+import com.mobilelibrary.adapter.BookRecommendAdapter.ViewHolder;
+import com.mobilelibrary.common.ImageManager;
+import com.mobilelibrary.entity.BookBorrowedEntity;
+import com.mobilelibrary.entity.BookRecommendEntity;
 
-public class BookRecommendAdapter extends ArrayListAdapter<BookRecommendEntity>{
+public class BookBorrowedAdapter extends ArrayListAdapter<BookBorrowedEntity>{
 
-	public BookRecommendAdapter(Activity context) {
+	public BookBorrowedAdapter(Activity context) {
 		super(context);
 		// TODO Auto-generated constructor stub
 	}
@@ -35,11 +33,11 @@ public class BookRecommendAdapter extends ArrayListAdapter<BookRecommendEntity>{
 
 		if (row==null) {
 			LayoutInflater inflater = mContext.getLayoutInflater();
-			row=inflater.inflate(R.layout.book_recommend_item, null);
+			row=inflater.inflate(R.layout.book_borrowed_item, null);
 
 			holder = new ViewHolder();
-			holder.bookImage = (ImageView)row.findViewById(R.id.book_recommend_imageview);
-			holder.bookText = (TextView)row.findViewById(R.id.book_recommend_textview);
+			holder.bookImage = (ImageView)row.findViewById(R.id.book_borrowed_imageview);
+			holder.bookText = (TextView)row.findViewById(R.id.book_borrowed_textview);
 
 			row.setTag(holder);
 		}
@@ -71,3 +69,5 @@ public class BookRecommendAdapter extends ArrayListAdapter<BookRecommendEntity>{
 	}
 
 }
+
+

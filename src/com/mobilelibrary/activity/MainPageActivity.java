@@ -15,6 +15,7 @@ public class MainPageActivity extends BaseActivity {
 
 	private Button btn_my_shelf;
 	private Button btn_personal_information;
+	private Button btn_book_borrowed;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,15 @@ public class MainPageActivity extends BaseActivity {
 		btn_personal_information = (Button)findViewById(R.id.btn_personal_information);
 
 		btn_personal_information.setOnClickListener(mPersonInfomationListener);
+		
+		//已借书目
+		btn_book_borrowed = (Button)findViewById(R.id.btn_book_borrowed);
+		btn_book_borrowed.setOnClickListener(mBookBorrowedListener);
+		
+		//借书记录
+		btn_book_borrowed = (Button)findViewById(R.id.btn_book_borrowed);
+		btn_book_borrowed.setOnClickListener(mBookBorrowedListener);
+
 	}
 
 	@Override
@@ -73,6 +83,19 @@ public class MainPageActivity extends BaseActivity {
 			startActivity(person_information_intent);
 		}
 	};
+	
+	// borrowed book listener
+	private OnClickListener  mBookBorrowedListener = new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			Intent book_borrowed_intent = new Intent(MainPageActivity.this,BookBorrowedActivity.class);
+			startActivity(book_borrowed_intent);
+		}
+	};
+	
+	
 
 	
 }
