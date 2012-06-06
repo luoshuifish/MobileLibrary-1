@@ -7,12 +7,27 @@ import org.json.JSONException;
 
 import com.mobilelibrary.entity.BookRecommendEntity;
 import com.mobilelibrary.entity.BookSearchEntity;
+import com.mobilelibrary.entity.UserEntity;
 import com.mobilelibrary.handlerexception.WSError;
 
 /*
  * 这个类用来封装JSON请求及得到响应资源
  */
 public class MobilelibraryResourceFromJSONRequest  {
+	
+	
+	//login
+	public UserEntity loginAuthentication(String userID ,String password) throws JSONException, WSError{
+		// TODO Auto-generated method stub
+		
+		//下面的代码目前只是用来测试
+		UserEntity userEntity = new UserEntity();
+		userEntity.setUserName("LYC");
+		userEntity.setUserId("LYC");
+		//上面的代码只是用来测试
+		
+		return userEntity;
+	}
     
 	//此方法用来获取推荐的新书
 	public BookRecommendEntity[] getBooksRecommend() throws JSONException, WSError{

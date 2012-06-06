@@ -28,7 +28,7 @@
     
     <!-- Common info -->
     <string name="version">版本号：1.0</string>
-    <string name="member">组员：唐韧 于永江 朱珣 张敬伟 刘瑞东 高明辉</string>
+    <string name="member">组员：唐韧 于永江 朱珣 张敬伟 刘瑞东 </string>
     <string name="confirm">确定</string>
     <string name="cancel">取消</string>
     <string name="promotion">提示</string>
@@ -104,6 +104,19 @@
    	
    	<!-- no borrowed books hint-->
    	<string name="no_borrowed_book_results">没有借的书籍</string>
+   	
+   	
+   	<!-- no borrowed books hint-->
+   	<string name="user_login">用户登陆</string>
+    <string name="exchange_account">切换账号</string>
+    <string name="account">账号：</string>
+    <string name="password">密码：</string>
+    <string name="login">登陆</string>
+    <string name="input_account">请输入账号</string>
+    <string name="input_password">请输入密码</string>
+    <string name="user_pwd_not_empty">用户名或密码不能为空</string>
+    <string name="login_success">登陆成功</string>
+    
     
     
     
