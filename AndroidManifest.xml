@@ -57,7 +57,7 @@
         <!-- Config service here -->
         
         <!-- Config provider here -->
-        <provider android:name="com.mobilelibrary.provider.LibraryProvider" android:authorities="MoblileLibraryAuthorities"/>
+        <provider android:name=".provider.LibraryProvider" android:authorities="MoblileLibraryAuthorities"/>
   
         
     </application>

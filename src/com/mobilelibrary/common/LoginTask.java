@@ -47,9 +47,9 @@ public class LoginTask extends AsyncTask<UserEntity, Integer, UserEntity> {
 	protected void onPreExecute() {
 		super.onPreExecute();
 		if (isFirstLogin) {
-			message = "第一次登陆请等待..";
+			message = "wait..";
 		}else {
-			message = "请等待...";
+			message = "wait..";
 		}
 		progressDialog = new ProgressDialog(context);
 		progressDialog.setMessage(message);
@@ -82,7 +82,7 @@ public class LoginTask extends AsyncTask<UserEntity, Integer, UserEntity> {
 		
 		if (result == null) {
 			progressDialog.dismiss();
-			Toast.makeText(context, "登陆失败", Toast.LENGTH_LONG).show();
+			Toast.makeText(context, "鐧婚檰澶辫触", Toast.LENGTH_LONG).show();
 		}else {
 				
 				Editor editor = sharedPreferences.edit();
