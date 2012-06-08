@@ -49,9 +49,6 @@ public class SearchActivity extends BaseActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.favorite);
-//		setContentView(R.layout.book_recommend_item);
-
-		
 		setTopTitle(this,R.string.book_search);
 		
 		mGallery = (Gallery)findViewById(R.id.Gallery);
@@ -60,22 +57,17 @@ public class SearchActivity extends BaseActivity{
 		mViewFlipper = (ViewFlipper)findViewById(R.id.ViewFlipper);
 		
 		mSearchEditText = (EditText)findViewById(R.id.et_search_key);
-		//锟斤拷锟斤拷锟斤拷钮
 		mSearchButton = (Button)findViewById(R.id.btn_do_search);
-		//锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷钮锟侥硷拷锟斤拷锟斤拷
 		mSearchButton.setOnClickListener(mSearchButtonListener);
 		
-		//执锟叫得碉拷锟狡硷拷锟斤拷锟斤拷锟斤拷叱锟�
 		new NewsTaskGetBookRecommend().execute((Void)null);
 		
 		
 		mSearchFlipper =(ViewFlipper)findViewById(R.id.SearchViewFlipper);
 		
-		//锟斤拷示锟斤拷目锟斤拷listView
 		mSearchListView = (ListView)findViewById(R.id.SearchListView);
 		
 		
-		//锟斤拷锟角發istview锟斤拷为锟秸ｏ拷锟斤拷锟斤拷示锟斤拷示锟斤拷锟斤拷
 		if(mSearchListView.getCount()==0){
 			mSearchFlipper.setDisplayedChild(2);
 		}
@@ -163,14 +155,12 @@ public class SearchActivity extends BaseActivity{
 
 	}
 	
-	//Gallery锟侥硷拷锟斤拷锟斤拷
 	private OnItemClickListener mGalleryListener = new OnItemClickListener(){
 
 		@Override
 		public void onItemClick(AdapterView<?> adapterView, View view, int position,
 				long id) {
 			BookRecommendEntity book = (BookRecommendEntity) adapterView.getItemAtPosition(position);
-			//锟斤拷锟斤拷锟斤拷锟斤拷图锟斤拷慕锟斤拷妫拷锟揭拷锟斤拷锟�
 		}
 		
 	};
@@ -188,7 +178,6 @@ public class SearchActivity extends BaseActivity{
 		@Override
 		public Integer doInBackground(Void... params) {
 			
-			//锟斤拷台锟斤拷锟斤拷锟斤拷
 			bookSearch();
 			return 1;
 		}
@@ -209,10 +198,8 @@ public class SearchActivity extends BaseActivity{
 
 		private void bookSearch(){
 			
-			//锟劫次斤拷锟斤拷JSON锟侥凤拷锟斤拷
 			MobilelibraryResourceFromJSONRequest  server = new MobilelibraryResourceFromJSONRequest();
 			
-			//锟矫碉拷锟斤拷锟斤拷
 			String query = mSearchEditText.getText().toString();
 			BookSearchEntity[] books = null;
 			try {
@@ -238,7 +225,6 @@ public class SearchActivity extends BaseActivity{
 	
 	
 	
-	//锟斤拷锟斤拷锟斤拷钮锟侥硷拷锟斤拷锟斤拷
 	private OnClickListener mSearchButtonListener = new OnClickListener(){
 
 		@Override

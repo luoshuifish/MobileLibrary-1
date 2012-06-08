@@ -16,7 +16,7 @@ public class BookInfoActivity extends BaseActivity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.book_info_layout);      
-        setTopTitle(this, R.string.personal_info);
+        setTopTitle(this, R.string.book_info);
         setBackButton(this, new OnClickListener() {
 			
 			@Override

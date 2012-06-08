@@ -3,6 +3,7 @@ package com.mobilelibrary.activity;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -122,7 +123,8 @@ public class BookBorrowedActivity extends BaseActivity{
 		@Override
 		public void onItemClick(AdapterView<?> adapterView, View view, int position,
 				long time) {
-			//锟斤拷锟斤拷锟斤拷锟斤拷锟较⒁�
+			Intent   book_info_intent = new Intent(BookBorrowedActivity.this, BookInfoActivity.class);
+			startActivity(book_info_intent);
 		}
 
 	};

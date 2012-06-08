@@ -121,6 +121,11 @@
    	<!-- book info--> 
     <string name="book_info_book_status_normal">已借</string>
     
+   <string name="book_info">书目信息</string>
+    
+    
+    
+    
     
     
     
