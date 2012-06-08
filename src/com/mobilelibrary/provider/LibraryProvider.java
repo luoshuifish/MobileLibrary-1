@@ -2,6 +2,7 @@ package com.mobilelibrary.provider;
 
 import com.mobilelibrary.dao.BaseDAO;
 import com.mobilelibrary.dao.BorrowedBookDAO;
+import com.mobilelibrary.dao.StoredBookDAO;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
@@ -28,6 +29,8 @@ public class LibraryProvider extends ContentProvider {
 	
 	
 	private static final  int BORROWED_BOOK_CODE = 1;
+	private static final  int STORED_BOOK_CODE = 2;
+
 	/**
 	 * 
 	 * set URI id in for created table
@@ -35,6 +38,7 @@ public class LibraryProvider extends ContentProvider {
 	static{
 		mUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 		mUriMatcher.addURI(BaseDAO.AUTHORITIES, BaseDAO.TABLE_BORROWED_BOOK, BORROWED_BOOK_CODE);
+		mUriMatcher.addURI(BaseDAO.AUTHORITIES, BaseDAO.TABLE_STORED_BOOK, STORED_BOOK_CODE);
 	}
 	
 	
@@ -52,9 +56,13 @@ public class LibraryProvider extends ContentProvider {
 		@Override
 		public void onCreate(SQLiteDatabase db) {
 			BorrowedBookDAO borrowedBookDAO = new BorrowedBookDAO(getContext());
+			StoredBookDAO storedBookDAO = new StoredBookDAO(getContext());
+
 
 			/* create the new table*/
 			db.execSQL(borrowedBookDAO.createTableString());
+			db.execSQL(storedBookDAO.createTableString());
+
 		
 		}
 
@@ -99,8 +107,12 @@ public class LibraryProvider extends ContentProvider {
 			db.insert(BaseDAO.TABLE_BORROWED_BOOK, null, values);
 			
 			break;
-		
-
+			
+		case STORED_BOOK_CODE:
+			
+			db.insert(BaseDAO.TABLE_STORED_BOOK, null, values);
+			
+			break;
 		}
 		
 		return null;
@@ -127,6 +139,11 @@ public class LibraryProvider extends ContentProvider {
 		case BORROWED_BOOK_CODE:
 			
 			cursor = db.query(BaseDAO.TABLE_BORROWED_BOOK, null, selection, selectionArgs, null, null, null);
+			
+			break;
+		case STORED_BOOK_CODE:
+			
+			cursor = db.query(BaseDAO.TABLE_STORED_BOOK, null, selection, selectionArgs, null, null, null);
 			
 			break;
 		

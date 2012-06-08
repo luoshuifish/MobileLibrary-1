@@ -31,6 +31,22 @@ public abstract class BaseDAO {
 													.append(CHARACTER_SLASH)
 													.append(TABLE_BORROWED_BOOK).toString()
 													);
+	public static final String TABLE_STORED_BOOK = "TABLE_StoredBook";
+	public static final Uri URI_STORED_BOOK = Uri.parse(new StringBuffer()
+													.append("content://")
+													.append(AUTHORITIES)
+													.append(CHARACTER_SLASH)
+													.append(TABLE_STORED_BOOK).toString()
+													);
+	
+	
+	//下面的字段是为了
+	public static String bookId = "book_id";
+	public static String bookName = "book_name";
+	public static String bookImageUrl = "book_image_url";
+	public static String bookAuthor = "book_author";
+	public static String bookPress = "book_press";
+	public static String bookPressTime = "book_press_time";
 
 	
  	/**

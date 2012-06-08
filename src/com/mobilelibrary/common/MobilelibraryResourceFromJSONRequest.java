@@ -51,7 +51,7 @@ public class MobilelibraryResourceFromJSONRequest  {
 			
 			BookRecommendEntity  book = new BookRecommendEntity();
 			book.setBookImageUrl("aa");
-			book.setBookText("数据结构");
+			book.setBookText("Android");
 			books[i]=book;
 			
 		}
@@ -72,7 +72,7 @@ public class MobilelibraryResourceFromJSONRequest  {
 			
 			BookSearchEntity  book = new BookSearchEntity();
 			book.setBookImageUrl("aa");
-			book.setBookText("数据结构");
+			book.setBookText("android");
 			books[i]=book;
 			
 		}

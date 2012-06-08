@@ -93,7 +93,7 @@ public class SearchActivity extends BaseActivity{
 	}
 	
 	
-	//Gallery锟斤拷锟届步锟竭筹拷
+	//Gallery
 	private class NewsTaskGetBookRecommend extends AsyncTask<Void, WSError, BookRecommendEntity[]> {
 
 		@Override

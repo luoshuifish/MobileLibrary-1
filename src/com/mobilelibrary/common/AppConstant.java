@@ -9,8 +9,11 @@ public interface AppConstant {
 	public static final char CHARACTER_SLASH  = '/';
 	
 	
-	//新书推荐文件夹名
+	//recommend book file path
 	public static final String BOOK_RECOMMEND = "book_recommend";
+	
+	//book cover image file path
+	public static final String BOOK_COVER = "book_recommend";
 	
 	
 }
