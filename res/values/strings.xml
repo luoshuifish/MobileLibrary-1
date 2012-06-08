@@ -118,6 +118,11 @@
     <string name="login_success">登陆成功</string>
     
     
+   	<!-- book info--> 
+    <string name="book_info_book_status_normal">已借</string>
+    
+    
+    
     
     
     

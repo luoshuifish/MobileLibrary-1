@@ -9,4 +9,8 @@
 	<drawable name="red">#FFE31818</drawable>
 	<drawable name="gray">#FF8B8B8B</drawable>
 	<drawable name="transparent">#00000000</drawable>
+	
+	<color name="book_info_text_color">#ff3e2110</color>
+	<color name="transparent">#00000000</color>
+	
 </resources>

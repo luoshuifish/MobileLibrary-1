@@ -3,6 +3,7 @@ package com.mobilelibrary.activity;
 import org.json.JSONException;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -59,22 +60,22 @@ public class SearchActivity extends BaseActivity{
 		mViewFlipper = (ViewFlipper)findViewById(R.id.ViewFlipper);
 		
 		mSearchEditText = (EditText)findViewById(R.id.et_search_key);
-		//������ť
+		//锟斤拷锟斤拷锟斤拷钮
 		mSearchButton = (Button)findViewById(R.id.btn_do_search);
-		//����������ť�ļ�����
+		//锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷钮锟侥硷拷锟斤拷锟斤拷
 		mSearchButton.setOnClickListener(mSearchButtonListener);
 		
-		//ִ�еõ��Ƽ�������߳�
+		//执锟叫得碉拷锟狡硷拷锟斤拷锟斤拷锟斤拷叱锟�
 		new NewsTaskGetBookRecommend().execute((Void)null);
 		
 		
 		mSearchFlipper =(ViewFlipper)findViewById(R.id.SearchViewFlipper);
 		
-		//��ʾ��Ŀ��listView
+		//锟斤拷示锟斤拷目锟斤拷listView
 		mSearchListView = (ListView)findViewById(R.id.SearchListView);
 		
 		
-		//���ǰlistview��Ϊ�գ�����ʾ��ʾ����
+		//锟斤拷锟角發istview锟斤拷为锟秸ｏ拷锟斤拷锟斤拷示锟斤拷示锟斤拷锟斤拷
 		if(mSearchListView.getCount()==0){
 			mSearchFlipper.setDisplayedChild(2);
 		}
@@ -100,7 +101,7 @@ public class SearchActivity extends BaseActivity{
 	}
 	
 	
-	//Gallery���첽�߳�
+	//Gallery锟斤拷锟届步锟竭筹拷
 	private class NewsTaskGetBookRecommend extends AsyncTask<Void, WSError, BookRecommendEntity[]> {
 
 		@Override
@@ -162,14 +163,14 @@ public class SearchActivity extends BaseActivity{
 
 	}
 	
-	//Gallery�ļ�����
+	//Gallery锟侥硷拷锟斤拷锟斤拷
 	private OnItemClickListener mGalleryListener = new OnItemClickListener(){
 
 		@Override
 		public void onItemClick(AdapterView<?> adapterView, View view, int position,
 				long id) {
 			BookRecommendEntity book = (BookRecommendEntity) adapterView.getItemAtPosition(position);
-			//��������ͼ��Ľ��棬��Ҫ����
+			//锟斤拷锟斤拷锟斤拷锟斤拷图锟斤拷慕锟斤拷妫拷锟揭拷锟斤拷锟�
 		}
 		
 	};
@@ -187,7 +188,7 @@ public class SearchActivity extends BaseActivity{
 		@Override
 		public Integer doInBackground(Void... params) {
 			
-			//��̨������
+			//锟斤拷台锟斤拷锟斤拷锟斤拷
 			bookSearch();
 			return 1;
 		}
@@ -208,10 +209,10 @@ public class SearchActivity extends BaseActivity{
 
 		private void bookSearch(){
 			
-			//�ٴν���JSON�ķ���
+			//锟劫次斤拷锟斤拷JSON锟侥凤拷锟斤拷
 			MobilelibraryResourceFromJSONRequest  server = new MobilelibraryResourceFromJSONRequest();
 			
-			//�õ�����
+			//锟矫碉拷锟斤拷锟斤拷
 			String query = mSearchEditText.getText().toString();
 			BookSearchEntity[] books = null;
 			try {
@@ -237,7 +238,7 @@ public class SearchActivity extends BaseActivity{
 	
 	
 	
-	//������ť�ļ�����
+	//锟斤拷锟斤拷锟斤拷钮锟侥硷拷锟斤拷锟斤拷
 	private OnClickListener mSearchButtonListener = new OnClickListener(){
 
 		@Override
@@ -249,13 +250,14 @@ public class SearchActivity extends BaseActivity{
 
 	};
 	
-	//��ĿlistView��ÿһ��Ŀ�ļ�����
+	//锟斤拷目listView锟斤拷每一锟斤拷目锟侥硷拷锟斤拷锟斤拷
 	private OnItemClickListener mBookClickListener = new OnItemClickListener(){
 
 		@Override
 		public void onItemClick(AdapterView<?> adapterView, View view, int position,
 				long time) {
-			//���������Ϣҳ
+			Intent   book_info_intent = new Intent(SearchActivity.this, BookInfoActivity.class);
+			startActivity(book_info_intent);
 		}
 
 	};

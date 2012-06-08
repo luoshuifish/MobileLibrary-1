@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include 
+		layout="@layout/common_topbar" />
+    <ScrollView android:id="@+id/viewBook_scrollView" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="7.0">
+        <LinearLayout android:orientation="vertical" android:background="@drawable/background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:paddingLeft="10.0sp" android:paddingTop="10.0sp" android:paddingRight="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:id="@+id/viewBook_cover" android:padding="10.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="20.0sp" android:textColor="@color/book_info_text_color" android:gravity="center" android:id="@+id/viewBook_title_edit" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@android:style/TextAppearance.Large" />
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textColor="@color/book_info_text_color" android:gravity="center" android:padding="10.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="75.0sp" android:text="图书状态" style="@android:style/TextAppearance.Small" />
+                        <TextView android:textColor="@color/book_info_text_color" android:id="@+id/viewBook_book_status" android:padding="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:text="@string/book_info_book_status_normal" style="@android:style/TextAppearance.Small" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_gravity="right" android:orientation="horizontal" android:background="@drawable/book_detail_info_bground" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <Button android:textColor="@drawable/white" android:layout_gravity="right|center" android:id="@+id/btn_book_remarks" android:background="@drawable/transparent" android:paddingLeft="6.0dip" android:paddingRight="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="查看书评" android:drawableLeft="@drawable/ic_book_remark" android:layout_weight="1.0" />
+                <Button android:textColor="@drawable/white" android:layout_gravity="right|center" android:id="@+id/btn_locate_my_book" android:background="@drawable/transparent" android:paddingRight="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="存放位置" android:drawableLeft="@drawable/location" android:layout_weight="1.0" />
+            </LinearLayout>
+            <TextView android:background="#ff732900" android:paddingLeft="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="详细信息" style="@android:style/TextAppearance.Medium" />
+            <LinearLayout android:orientation="horizontal" android:paddingLeft="5.0sp" android:paddingRight="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="@color/book_info_text_color" android:gravity="center" android:padding="5.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="75.0sp" android:text="作    者" style="@android:style/TextAppearance.Small" />
+                <TextView android:textColor="@color/book_info_text_color" android:layout_gravity="center" android:id="@+id/viewBook_author" android:paddingLeft="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="false" style="@android:style/TextAppearance.Small" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:paddingLeft="5.0sp" android:paddingRight="5.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="@color/book_info_text_color" android:gravity="center" android:padding="5.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="75.0sp" android:text="ISBN码" style="@android:style/TextAppearance.Small" />
+                <TextView android:textColor="@color/book_info_text_color" android:layout_gravity="center" android:id="@+id/viewBook_id" android:paddingLeft="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="false" style="@android:style/TextAppearance.Small" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:paddingLeft="5.0sp" android:paddingRight="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="@color/book_info_text_color" android:gravity="center" android:padding="5.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="75.0sp" android:text="出 版 商" style="@android:style/TextAppearance.Small" />
+                <TextView android:textColor="@color/book_info_text_color" android:layout_gravity="center" android:id="@+id/viewBook_press" android:paddingLeft="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="false" style="@android:style/TextAppearance.Small" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:paddingLeft="5.0sp" android:paddingRight="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="@color/book_info_text_color" android:gravity="center" android:padding="5.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="75.0sp" android:text="出版日期" style="@android:style/TextAppearance.Small" />
+                <TextView android:textColor="@color/book_info_text_color" android:layout_gravity="center" android:id="@+id/viewBook_press_date" android:paddingLeft="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="false" style="@android:style/TextAppearance.Small" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:paddingLeft="5.0sp" android:paddingRight="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="@color/book_info_text_color" android:gravity="center" android:padding="5.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="75.0sp" android:text="书籍页数" style="@android:style/TextAppearance.Small" />
+                <TextView android:textColor="@color/book_info_text_color" android:layout_gravity="center" android:id="@+id/viewBook_numberOfPages" android:paddingLeft="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="false" style="@android:style/TextAppearance.Small" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:paddingLeft="5.0sp" android:paddingRight="10.0sp" android:paddingBottom="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="@color/book_info_text_color" android:gravity="center" android:padding="5.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="75.0sp" android:text="主    题" style="@android:style/TextAppearance.Small" />
+                <TextView android:textColor="@color/book_info_text_color" android:layout_gravity="center" android:id="@+id/viewBook_subject" android:paddingLeft="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="false" style="@android:style/TextAppearance.Small" />
+            </LinearLayout>
+            <TextView android:background="#ff732900" android:paddingLeft="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="内容简介" style="@android:style/TextAppearance.Medium" />
+            <TextView android:textColor="@color/book_info_text_color" android:id="@+id/viewBook_description" android:padding="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="false" style="@android:style/TextAppearance.Small" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:background="@drawable/status_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <ImageButton android:id="@+id/btn_status_bar_share_book" android:background="@color/transparent" android:padding="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/share_book" android:layout_weight="1.0" />
+        <ImageButton android:id="@+id/btn_status_bar_borrow_book" android:background="@color/transparent" android:padding="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/borrow_book" android:layout_weight="1.0" />
+        <ImageButton android:id="@+id/btn_status_bar_store" android:background="@color/transparent" android:padding="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/store_book" android:layout_weight="1.0" />
+        <ImageButton android:id="@+id/btn_status_bar_recommend" android:background="@color/transparent" android:padding="10.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/recommend_book" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>
