@@ -12,5 +12,7 @@
 	
 	<color name="book_info_text_color">#ff3e2110</color>
 	<color name="transparent">#00000000</color>
+	<color name="translucent_dark">#99000000</color>
+	
 	
 </resources>

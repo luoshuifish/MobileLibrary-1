@@ -63,10 +63,9 @@ public class StartActivity extends Activity {
 				boolean isNetWorkAvaliable = SystemUtils.checkNetwork(StartActivity.this);
 				if (!isNetWorkAvaliable) {
 					AlertDialog.Builder builder = new AlertDialog.Builder(StartActivity.this);
-					builder.setTitle("网络错误");
-					builder.setMessage("网络异常，请检查网络连接");
-					builder.setPositiveButton("确认", new OnClickListener() {
-						
+					builder.setTitle("缃戠粶閿欒");
+					builder.setMessage("缃戠粶寮傚父锛岃妫�煡缃戠粶杩炴帴");
+					builder.setPositiveButton("纭", new OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
 							// TODO Auto-generated method stub
@@ -94,7 +93,7 @@ public class StartActivity extends Activity {
 							LoginTask loginTask = new LoginTask(StartActivity.this);
 							loginTask.execute(userEntity);
 						}else {
-							Toast.makeText(StartActivity.this, "系统错误", Toast.LENGTH_SHORT).show();
+							Toast.makeText(StartActivity.this, "绯荤粺閿欒", Toast.LENGTH_SHORT).show();
 						}
 					}
 				}

@@ -55,7 +55,7 @@ public class BookSearchAdapter extends ArrayListAdapter<BookSearchEntity> {
 		Resources res = mContext.getResources();
 		Bitmap bmp=BitmapFactory.decodeResource(res, R.drawable.book_recommend_default);
 		
-		//д╛хом╪ф╛
+
 		ImageManager.INSTANCE.setPlaceholder(bmp);
 		ImageManager.INSTANCE.loadBitmap(imageUrl, holder.bookImage);  
 

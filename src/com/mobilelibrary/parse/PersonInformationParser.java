@@ -20,10 +20,8 @@ public class PersonInformationParser extends BaseParser {
 		String json = StringUtil.converStreamToString(in);
 		Gson gson =new Gson();
 		userEntity = gson.fromJson(json, UserEntity.class);
-		
 		System.out.println("userEntity"+userEntity.toString());
 		return userEntity;
-		
 	}
 
 }

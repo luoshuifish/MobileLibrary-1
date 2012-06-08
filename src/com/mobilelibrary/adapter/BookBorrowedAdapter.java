@@ -55,7 +55,7 @@ public class BookBorrowedAdapter extends ArrayListAdapter<BookBorrowedEntity>{
 		Resources res = mContext.getResources();
 		Bitmap bmp=BitmapFactory.decodeResource(res, R.drawable.book_recommend_default);
 		
-		//Ä¬ÈÏÍ¼Æ¬
+
 		ImageManager.INSTANCE.setPlaceholder(bmp);
 		ImageManager.INSTANCE.loadBitmap(imageUrl, holder.bookImage);  
 
