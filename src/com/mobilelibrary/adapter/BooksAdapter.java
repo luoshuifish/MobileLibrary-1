@@ -13,8 +13,10 @@ import android.view.ViewGroup;
 import android.database.Cursor;
 import android.database.CharArrayBuffer;
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 
 import com.mobilelibrary.R;
 
@@ -24,7 +26,7 @@ import com.mobilelibrary.drawable.CrossFadeDrawable;
 import com.mobilelibrary.drawable.FastBitmapDrawable;
 import com.mobilelibrary.utils.ImageUtilities;
 
-class BooksAdapter extends CursorAdapter {
+public class BooksAdapter extends CursorAdapter {
 	
 	
     private static final String[] PROJECTION_IDS_AND_TITLE = new String[] {
@@ -41,9 +43,9 @@ class BooksAdapter extends CursorAdapter {
     private final BookShelfActivity mActivity;
     private final Bitmap mDefaultCoverBitmap;
     private final FastBitmapDrawable mDefaultCover;
-    private final String[] mArguments2 = new String[2];
 
-    BooksAdapter(BookShelfActivity activity) {
+
+    public BooksAdapter(BookShelfActivity activity) {
         super(activity, activity.managedQuery(BaseDAO.URI_STORED_BOOK,
                 PROJECTION_IDS_AND_TITLE,
                 null, null, null), true);
@@ -88,11 +90,18 @@ class BooksAdapter extends CursorAdapter {
         holder.bookId = bookId;
         holder.bookName = c.getString(mBookNameIndex);
         final BookShelfActivity activity = mActivity;
+//        holder.title.setCompoundDrawablesWithIntrinsicBounds(null, null, null,
+//                    ImageUtilities.getCachedCover(bookId, mDefaultCover));
+        Resources res = context.getResources();
+        Bitmap bmp=BitmapFactory.decodeResource(res, R.drawable.book_recommend_default);
+        Matrix matrix = new Matrix();
+        matrix.postScale(0.7f,0.7f); 
+        Bitmap resizeBmp = bmp.createBitmap(bmp,0,0,bmp.getWidth(),bmp.getHeight(),matrix,true);
         holder.title.setCompoundDrawablesWithIntrinsicBounds(null, null, null,
-                    ImageUtilities.getCachedCover(bookId, mDefaultCover));
+               new FastBitmapDrawable(resizeBmp));
        
         final CharArrayBuffer buffer = holder.buffer;
-        c.copyStringToBuffer(mBookIdIndex, buffer);
+        c.copyStringToBuffer(mBookNameIndex, buffer);
         final int size = buffer.sizeCopied;
         if (size != 0) {
             holder.title.setText(buffer.data, 0, size);

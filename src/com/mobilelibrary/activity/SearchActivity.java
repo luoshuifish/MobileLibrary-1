@@ -236,7 +236,7 @@ public class SearchActivity extends BaseActivity{
 
 	};
 	
-	//锟斤拷目listView锟斤拷每一锟斤拷目锟侥硷拷锟斤拷锟斤拷
+	
 	private OnItemClickListener mBookClickListener = new OnItemClickListener(){
 
 		@Override
